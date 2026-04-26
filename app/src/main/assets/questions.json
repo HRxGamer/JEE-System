@@ -1,0 +1,11 @@
+[
+  {
+    "subject": "Physics",
+    "topic": "Mechanics",
+    "subtopic": "Rotational",
+    "difficulty": "easy",
+    "type": "mains",
+    "question": "Torque formula?",
+    "answer": "r x F"
+  }
+]
