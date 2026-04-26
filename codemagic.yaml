@@ -3,25 +3,16 @@ workflows:
     name: Android Build
     max_build_duration: 60
 
-    environment:
-      android_signing:
-        - keystore_reference
-      vars:
-        PACKAGE_NAME: "com.example.jeesystem"
-
     scripts:
-      - name: Set up Gradle
+      - name: Install Gradle
         script: |
           wget https://services.gradle.org/distributions/gradle-8.2-bin.zip
           unzip -q gradle-8.2-bin.zip
           export PATH=$PWD/gradle-8.2/bin:$PATH
 
-      - name: Accept licenses
-        script: yes | sdkmanager --licenses || true
-
       - name: Build APK
         script: |
-          gradle assembleDebug --stacktrace
+          gradle assembleDebug
 
     artifacts:
       - app/build/outputs/**/*.apk
