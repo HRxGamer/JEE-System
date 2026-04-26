@@ -6,8 +6,15 @@ workflows:
       vars:
         PACKAGE_NAME: "com.example.jeesystem"
     scripts:
+      - name: Install Gradle
+        script: |
+          wget https://services.gradle.org/distributions/gradle-8.2-bin.zip
+          unzip gradle-8.2-bin.zip
+          export PATH=$PWD/gradle-8.2/bin:$PATH
+
       - name: Build APK
         script: |
-          ./gradlew assembleDebug
+          gradle assembleDebug
+
     artifacts:
       - app/build/outputs/**/*.apk
