@@ -4,6 +4,7 @@
         android:label="JEE System"
         android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
 
+        <!-- Main Screen -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -14,6 +15,11 @@
             </intent-filter>
 
         </activity>
+
+        <!-- Quiz Screen -->
+        <activity
+            android:name=".QuizActivity"
+            android:exported="false"/>
 
     </application>
 
